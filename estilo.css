@@ -308,3 +308,57 @@ body.desplazar-loader .contenido-principal {
   transform: translateY(0); /* baja el contenido */
   overflow: auto; /* habilita scroll después */
 }
+
+/* RESPONSIVIDAD*/
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .logo, .name, .contact-info {
+    position: static;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .contenedor-columnas-b {
+    flex-direction: column;
+  }
+
+  .col-izquierda-b, .col-derecha-b {
+    max-width: 100%;
+  }
+
+  .grid-cuadricula {
+    grid-template-columns: 1fr; /* solo una columna en celulares */
+    gap: 15px;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-info, .footer-redes {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .promo {
+    width: 90%;
+  }
+
+  .imagen-cuadricula {
+    width: 90%;
+  }
+}
