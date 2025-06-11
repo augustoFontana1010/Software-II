@@ -7,14 +7,40 @@
 
 html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* desactivamos scroll al principio */
+  overflow: hidden;
 }
 
-body {
-  margin: 0;
+body.desplazar-loader {
+  overflow: auto;
+}
+
+.contenido-principal {
   background-image: url('imagenes/f709b240-60b6-42d4-83cd-a6dbddd15ad7.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  transform: translateY(100vh);
+  transition: transform 1s ease-in-out;
+}
+
+header {
+  padding: 1rem;
+
+  background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente si lo querés ver sobre la imagen */
+  color: white;
+  z-index: 1;
+}
+
+
+footer {
+  margin-top: auto; /* Este hace que el footer baje al fondo */
 }
 
 header {
@@ -334,9 +360,9 @@ body.desplazar-loader .contenido-principal {
   }
 
   .grid-cuadricula {
-    grid-template-columns: 1fr; /* solo una columna en celulares */
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-  }
+  } 
 
   .menu-items {
     flex-direction: column;
@@ -359,6 +385,8 @@ body.desplazar-loader .contenido-principal {
   }
 
   .imagen-cuadricula {
-    width: 90%;
+    width: 50%;
+    max-width: 200px;
+    max-height: 200px;
   }
 }
