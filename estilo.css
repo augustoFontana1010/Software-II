@@ -18,25 +18,19 @@ body.desplazar-loader {
   overflow: auto;
 }
 
-.contenido-principal {
+body {
+  /* ...otras reglas... */
   background-image: url('imagenes/f709b240-60b6-42d4-83cd-a6dbddd15ad7.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  transform: translateY(100vh);
-  transition: transform 1s ease-in-out;
 }
-
 header {
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente si lo querés ver sobre la imagen */
   color: white;
   z-index: 1;
 }
-
 
 footer {
   margin-top: auto;
@@ -299,6 +293,7 @@ footer {
   border-radius: 30px 30px 10px 10px;
 }
 
+
 @keyframes showPart {
   to {
     opacity: 1;
@@ -319,7 +314,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: #f8f3eb; /* fondo animación */
+  /* background: #f8f3eb; */ /* Elimina o comenta esta línea */
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -346,7 +341,6 @@ body.desplazar-loader .contenido-principal {
 }
 
 /* RESPONSIVIDAD*/
-
 @media (max-width: 768px) {
   header {
     flex-direction: column;
