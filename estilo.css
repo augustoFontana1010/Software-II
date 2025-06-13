@@ -369,6 +369,7 @@ body.desplazar-loader .contenido-principal {
   }
 
   .grid-cuadricula {
+    grid-template-columns: repeat(1,1fr);
     gap: 15px;
   } 
 
