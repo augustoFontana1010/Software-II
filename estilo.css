@@ -32,7 +32,6 @@ body.desplazar-loader {
 
 header {
   padding: 1rem;
-
   background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente si lo querés ver sobre la imagen */
   color: white;
   z-index: 1;
@@ -40,7 +39,7 @@ header {
 
 
 footer {
-  margin-top: auto; /* Este hace que el footer baje al fondo */
+  margin-top: auto;
 }
 
 header {
@@ -66,8 +65,13 @@ header {
   position: relative;
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: #BBBBBB;
+  color: #A97E4F;
   left: 10%;
+  /* Sombra más notoria y definida */
+  text-shadow:
+    2px 2px 6px #000,
+    0 0 2px #000,
+    0 0 1px #fff;
 }
 
 .contact-info {
@@ -76,9 +80,15 @@ header {
   text-align: right;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 125%;
-  color: #BBBBBB;
+  color: #A97E4F;
   top: 6%;
+  /* Sombra más notoria y definida */
+  text-shadow:
+    2px 2px 6px #000,
+    0 0 2px #000,
+    0 0 1px #fff;
 }
+
 
 .contenedor-columnas-b {
   margin-top: 20px;
