@@ -11,32 +11,36 @@ html, body {
   padding: 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 body.desplazar-loader {
   overflow: auto;
 }
 
-body {
-  /* ...otras reglas... */
+.contenido-principal {
   background-image: url('imagenes/f709b240-60b6-42d4-83cd-a6dbddd15ad7.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
-  background-attachment: fixed;
+  flex: 1;
+  transform: translateY(100vh);
+  transition: transform 1s ease-in-out;
 }
+
 header {
   padding: 1rem;
+
   background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente si lo querés ver sobre la imagen */
   color: white;
   z-index: 1;
 }
 
+
 footer {
-  margin-top: auto;
+  margin-top: auto; /* Este hace que el footer baje al fondo */
 }
 
 header {
@@ -62,10 +66,9 @@ header {
   position: relative;
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: #A97E4F;
+   color: #A97E4F;
   left: 10%;
-  /* Sombra más notoria y definida */
-  text-shadow:
+   text-shadow:
     2px 2px 6px #000,
     0 0 2px #000,
     0 0 1px #fff;
@@ -77,15 +80,13 @@ header {
   text-align: right;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 125%;
-  color: #A97E4F;
+    color: #A97E4F;
   top: 6%;
-  /* Sombra más notoria y definida */
-  text-shadow:
+   text-shadow:
     2px 2px 6px #000,
     0 0 2px #000,
     0 0 1px #fff;
 }
-
 
 .contenedor-columnas-b {
   margin-top: 20px;
@@ -296,7 +297,6 @@ footer {
   border-radius: 30px 30px 10px 10px;
 }
 
-
 @keyframes showPart {
   to {
     opacity: 1;
@@ -317,7 +317,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100vh;
-  /* background: #f8f3eb; */ /* Elimina o comenta esta línea */
+  background: #f8f3eb; /* fondo animación */
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -331,10 +331,8 @@ footer {
   z-index: 1;
   transform: translateY(100vh); /* fuera de pantalla al principio */
   transition: transform 1s ease-in-out;
-  flex: 1 0 auto;                /* <-- Agrega esta línea */
-  display: flex;                 /* <-- Agrega esta línea */
-  flex-direction: column;        /* <-- Agrega esta línea */
 }
+
 /* Cuando se activa la clase en el body */
 body.desplazar-loader .pantalla-carga {
   transform: translateY(-100vh); /* sube el loader */
@@ -346,6 +344,7 @@ body.desplazar-loader .contenido-principal {
 }
 
 /* RESPONSIVIDAD*/
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -369,7 +368,7 @@ body.desplazar-loader .contenido-principal {
   }
 
   .grid-cuadricula {
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 15px;
   } 
 
@@ -394,7 +393,7 @@ body.desplazar-loader .contenido-principal {
   }
 
   .imagen-cuadricula {
-    width: 50%;
+    width: 55%;
     max-width: 200px;
     max-height: 200px;
   }
