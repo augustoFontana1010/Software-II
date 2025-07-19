@@ -1,48 +1,24 @@
-
+/* =============== RESETEO GENERAL =============== */
 * {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
+/* =============== ESTRUCTURA PRINCIPAL =============== */
 html, body {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Al principio desactivo el scroll mientras carga */
+}
+
+body {
   margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  background-image: url('imagenes/f709b240-60b6-42d4-83cd-a6dbddd15ad7.png'); /* Fondo general del sitio */
 }
 
-body.desplazar-loader {
-  overflow: auto;
-}
-
-.contenido-principal {
-  background-image: url('imagenes/f709b240-60b6-42d4-83cd-a6dbddd15ad7.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  transform: translateY(100vh);
-  transition: transform 1s ease-in-out;
-}
-
-header {
-  padding: 1rem;
-
-  background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente si lo querés ver sobre la imagen */
-  color: white;
-  z-index: 1;
-}
-
-
-footer {
-  margin-top: auto; /* Este hace que el footer baje al fondo */
-}
-
+/* =============== HEADER (encabezado) =============== */
 header {
   display: flex;
   justify-content: space-between;
@@ -65,29 +41,22 @@ header {
   flex: 2;
   position: relative;
   text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   color: #A97E4F;
+  font-family: 'Lucida Sans', sans-serif;
+  color: #BBBBBB;
   left: 10%;
-   text-shadow:
-    2px 2px 6px #000,
-    0 0 2px #000,
-    0 0 1px #fff;
 }
 
 .contact-info {
   flex: 1;
   position: relative;
   text-align: right;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', sans-serif;
   font-size: 125%;
-    color: #A97E4F;
+  color: #BBBBBB;
   top: 6%;
-   text-shadow:
-    2px 2px 6px #000,
-    0 0 2px #000,
-    0 0 1px #fff;
 }
 
+/* =============== COLUMNAS PRINCIPALES =============== */
 .contenedor-columnas-b {
   margin-top: 20px;
   display: flex;
@@ -122,13 +91,13 @@ header {
   margin-bottom: 20px;
 }
 
+/* =============== GRILLA DE PRODUCTOS =============== */
 .grid-cuadricula {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   justify-items: center;
   align-items: start;
-
 }
 
 .grid-item {
@@ -140,15 +109,15 @@ header {
   width: 75%;
   height: 100%;
   object-fit: cover;
-  border-radius: 15px;             /* Bordes redondeados */
-  border: 3px solid #fff;          /* Borde blanco */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+  border-radius: 15px;
+  border: 3px solid #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .imagen-cuadricula:hover {
-  transform: scale(1.05);          /* Zoom */
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más fuerte */
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .descripcion {
@@ -158,6 +127,7 @@ header {
   font-family: sans-serif;
 }
 
+/* =============== MENÚ CIRCULAR (opcional, si lo usás) =============== */
 .menu-items {
   display: flex;
   justify-content: center;
@@ -176,7 +146,7 @@ header {
   border-radius: 50%;
 }
 
-/* Pie de página */
+/* =============== PIE DE PÁGINA (FOOTER) =============== */
 footer {
   background-color: #1a1a1a;
   color: #f0f0f0;
@@ -217,7 +187,7 @@ footer {
   width: 32px;
   height: 32px;
   margin-left: 10px;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1); /* Para hacer los íconos blancos */
   transition: transform 0.2s ease;
 }
 
@@ -225,7 +195,7 @@ footer {
   transform: scale(1.1);
 }
 
-/* Publicidad */
+/* =============== PUBLICIDAD / PROMO =============== */
 .publicidad {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
@@ -253,6 +223,8 @@ footer {
   margin-top: 10px;
   border-radius: 8px;
 }
+
+/* =============== ANIMACIÓN DE CARGA (LOADER) =============== */
 #loader {
   display: flex;
   flex-direction: column-reverse;
@@ -261,7 +233,7 @@ footer {
   height: 100vh;
   background: #bea672;
   font-family: sans-serif;
-  animation: fadeOut 1s ease-out 3s forwards;
+  animation: fadeOut 1s ease-out 3s forwards; /* Aparece durante 3s y se desvanece */
 }
 
 .burger-part {
@@ -297,6 +269,7 @@ footer {
   border-radius: 30px 30px 10px 10px;
 }
 
+/* Animaciones del loader */
 @keyframes showPart {
   to {
     opacity: 1;
@@ -311,13 +284,14 @@ footer {
   }
 }
 
+/* Cubierta del loader que se desliza hacia arriba */
 .pantalla-carga {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: #f8f3eb; /* fondo animación */
+  background: #f8f3eb;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -326,25 +300,25 @@ footer {
   transition: transform 1s ease-in-out;
 }
 
+/* Contenido principal, oculto debajo del loader al principio */
 .contenido-principal {
   position: relative;
   z-index: 1;
-  transform: translateY(100vh); /* fuera de pantalla al principio */
+  transform: translateY(100vh); /* Oculto al cargar */
   transition: transform 1s ease-in-out;
 }
 
-/* Cuando se activa la clase en el body */
+/* Cuando el body tiene clase .desplazar-loader (se activa con JS) */
 body.desplazar-loader .pantalla-carga {
-  transform: translateY(-100vh); /* sube el loader */
+  transform: translateY(-100vh); /* El loader se va para arriba */
 }
 
 body.desplazar-loader .contenido-principal {
-  transform: translateY(0); /* baja el contenido */
-  overflow: auto; /* habilita scroll después */
+  transform: translateY(0); /* El contenido baja a su lugar */
+  overflow: auto; /* Habilito scroll después del loader */
 }
 
-/* RESPONSIVIDAD*/
-
+/* =============== RESPONSIVE (para celulares) =============== */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -368,9 +342,9 @@ body.desplazar-loader .contenido-principal {
   }
 
   .grid-cuadricula {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr; /* Una sola columna en pantallas chicas */
     gap: 15px;
-  } 
+  }
 
   .menu-items {
     flex-direction: column;
@@ -393,8 +367,6 @@ body.desplazar-loader .contenido-principal {
   }
 
   .imagen-cuadricula {
-    width: 70%;
-    max-width: 200px;
-    max-height: 200px;
+    width: 90%;
   }
 }
