@@ -41,19 +41,23 @@ header {
   flex: 2;
   position: relative;
   text-align: center;
-  font-family: 'Lucida Sans', sans-serif;
-  color: #BBBBBB;
+  font-family: "Oswald", sans-serif;
+  color: #ff4423;
   left: 10%;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+
 }
 
 .contact-info {
   flex: 1;
   position: relative;
   text-align: right;
-  font-family: 'Lucida Sans', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 125%;
-  color: #BBBBBB;
+  color: #ff4423;
   top: 6%;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+
 }
 
 /* =============== COLUMNAS PRINCIPALES =============== */
