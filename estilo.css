@@ -35,6 +35,8 @@ header {
   position: relative;
   top: 5%;
   left: 5%;
+  width: 250px; /* o el tamaño que quieras */
+  height: auto; /* mantiene proporciones */
 }
 
 .name {
@@ -346,7 +348,7 @@ body.desplazar-loader .contenido-principal {
   }
 
   .grid-cuadricula {
-    grid-template-columns: 1fr; /* Una sola columna en pantallas chicas */
+    grid-template-columns: 1fr 1fr; /* dos columna en pantallas chicas */
     gap: 15px;
   }
 
