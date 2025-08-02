@@ -32,11 +32,14 @@ header {
 }
 
 .logo {
-  position: relative;
-  top: 5%;
-  left: 5%;
-  width: 250px; /* o el tamaño que quieras */
-  height: auto; /* mantiene proporciones */
+  position: absolute;  /* o relative según tu estructura */
+  top: 20%;
+  left: 5%;   /* Usás 'right' en vez de 'left' */
+  height: auto;
+}
+.logo img {
+  width: 180px;   /* Cambiá esto para agrandar o achicar */
+  height: auto;   /* Mantiene las proporciones */
 }
 
 .name {
